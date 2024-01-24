@@ -32,9 +32,12 @@ jobs:
 
     - name: Build Docker image
       run: docker build -t ghcr.io/tamarshayo/image-single-num:1.0 -t tamarshayo/image-single-num:1.0 .
-    
-    - name: login
-      run: echo "secrets.MY_SECRET_ACTION" | docker login ghcr.io -u "tamarshayo" --password-stdin
+    - name: Auth
+      uses: docker/login-action@v1
+      with:
+            registry: ghcr.io
+            username: tamarshayo
+            password: secrets.MY_SECRET_ACTION
     
     - name: Push Docker image to GitHub Container Registry
       run: docker push ghcr.io/tamarshayo/image-single-num:1.0
