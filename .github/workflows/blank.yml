@@ -38,6 +38,7 @@ jobs:
       with:
         registry: ghcr.io
         username: tamarshayo
-        password: ${{ secrets.MY_SECRET_ACTION1 }}        
+        password: ${{ secrets.MY_SECRET_ACTION1 }}   
+        
     - name: Push Docker image to GitHub Container Registry
       run: docker push ghcr.io/tamarshayo/image-single-num:1.0
