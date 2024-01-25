@@ -33,12 +33,10 @@ jobs:
     - name: Build Docker image
       run: docker build -t ghcr.io/tamarshayo/image-single-num:1.0 -t tamarshayo/image-single-num:1.0 .
     
+    - name: export key
+      run: export CR_PAT=MY_TOKEN
     - name: Auth
-      uses: docker/login-action@v1
-      with:
-            registry: ghcr.io
-            username: tamarshayo
-            password: secrets.MY_SECRET_ACTION
+      run: echo $CR_PAT | docker login ghcr.io -u tamarshayo --password-stdin
 
     - name: Push Docker image to GitHub Container Registry
       run: docker push ghcr.io/tamarshayo/image-single-num:1.0
