@@ -11,5 +11,5 @@ Thank you,
 I really enjoyed the exercise - it's definitely an interesting topic...
 On the local machine it ran to me.i build and run the image.
 During the deployment part it gets stuck on a security error.
-I was looking for a solution to the problem of commands, login, logout, tokens, etc.
+I was looking for a solution to the problem of different structures of commands, login, logout, tokens,permissions etc.
 But I did not succeed:(
